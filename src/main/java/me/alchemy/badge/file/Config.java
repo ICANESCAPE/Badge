@@ -3,7 +3,6 @@ package me.alchemy.badge.file;
 import lombok.Getter;
 import me.alchemy.badge.Badge;
 import me.alchemy.badge.dto.Data;
-import org.bukkit.configuration.ConfigurationSection;
 import org.inventivetalent.itembuilder.util.FileUtil;
 
 import java.util.ArrayList;
@@ -25,10 +24,7 @@ public class Config extends FileUtil {
 
     @Override
     public void check() {
-       /* ConfigurationSection cs = this.getConfigurationSection("gui");
-        for(String key : cs.getKeys(false)) {
-            data.add(new Data(cs.getString(key + ".slot"), cs.getString(key+ ".item")));
-        }*/
+
     }
 
   /*  @Getter
@@ -57,4 +53,5 @@ public class Config extends FileUtil {
   public static String getLeg() { return config.getString("leg"); }
 
   public static String getBoot() { return config.getString("boot"); }
+
 }

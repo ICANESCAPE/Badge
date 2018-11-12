@@ -3,5 +3,4 @@
 
 > why so serious
 
-## Hello world!
-
+## Hello world
