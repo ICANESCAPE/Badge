@@ -1,0 +1,7 @@
+name: Badge
+version: ${project.version}
+main: me.alchemy.badge.Badge
+depend: [SCT_Core]
+authors: [Alchemy]
+commands:
+  badge:
