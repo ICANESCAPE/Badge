@@ -46,29 +46,37 @@ public class InvClose implements Listener {
                 DataUtil.setPlayerInfo(player.getName(), "helmet", Config.getHelmet());
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(helmet));
             } else {
-                player.sendMessage(BasicUtil.info("&c这个物品不是头盔饰品"));
-                player.getInventory().addItem(new ItemStack[] { helmet} );
+                player.sendMessage(BasicUtil.info("&c这个物品不是头盔饰品，不作计算"));
+                if(helmet != null) {
+                    player.getInventory().addItem(new ItemStack[] { helmet } );
+                }
             }
             if(chestplate != null && chestplate.isSimilar(BasicUtil.toItem(Config.getChestplate()))) {
                 DataUtil.setPlayerInfo(player.getName(), "chestplate", Config.getChestplate());
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(chestplate));
             } else {
-                player.sendMessage(BasicUtil.info("&c这个物品不是胸甲饰品"));
-                player.getInventory().addItem(new ItemStack[] { chestplate } );
+                player.sendMessage(BasicUtil.info("&c这个物品不是胸甲饰品，不作计算"));
+                if(chestplate != null) {
+                    player.getInventory().addItem(new ItemStack[] { chestplate } );
+                }
             }
             if(legging != null && legging.isSimilar(BasicUtil.toItem(Config.getLeg()))) {
                 DataUtil.setPlayerInfo(player.getName(), "leg", Config.getLeg());
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(legging));
             } else {
-                player.sendMessage(BasicUtil.info("&c这个物品不是护腿饰品"));
-                player.getInventory().addItem(new ItemStack[] { legging } );
+                player.sendMessage(BasicUtil.info("&c这个物品不是护腿饰品或者为空，不作计算"));
+                if(legging != null) {
+                    player.getInventory().addItem(new ItemStack[] { legging } );
+                }
             }
             if(boots != null && boots.isSimilar(BasicUtil.toItem(Config.getBoot()))) {
                 DataUtil.setPlayerInfo(player.getName(), "boot", Config.getBoot());
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(boots));
             } else {
-                player.sendMessage(BasicUtil.info("&c这个物品不是靴子饰品"));
-                player.getInventory().addItem(new ItemStack[] { boots } );
+                player.sendMessage(BasicUtil.info("&c这个物品为空或者不是护腿饰品，不作计算"));
+                if(legging != null) {
+                    player.getInventory().addItem(new ItemStack[] { boots} );
+                }
             }
             attributeMap.put(player.getName(), attribute);
             player.sendMessage(BasicUtil.info("&a记录完成"));

@@ -1,6 +1,7 @@
 package me.alchemy.badge.util;
 
 import me.alchemy.badge.Badge;
+import me.alchemy.badge.listener.DamageListener;
 import me.alchemy.badge.listener.InterctItem;
 import me.alchemy.badge.listener.InvClose;
 import me.alchemy.badge.listener.JoinListener;
@@ -18,6 +19,7 @@ public class ListenerUtil {
         register(new InvClose());
         register(new InterctItem());
         register(new JoinListener());
+        register(new DamageListener());
     }
     private static void register(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, Badge.getInstance());
