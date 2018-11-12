@@ -3,3 +3,8 @@ size: 54
 name: "ceshi"
 kong: "kong"
 equip: "10,11,12,13"
+#core读取
+helmet: "tool2"
+chestplate: "tool3"
+leg: "tool4"
+boot: "tool5"

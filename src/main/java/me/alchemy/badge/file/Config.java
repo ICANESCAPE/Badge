@@ -17,41 +17,38 @@ public class Config extends FileUtil {
 
     private static Config config;
 
-    @Getter private static List<Data> data = new ArrayList<>();
+    @Getter
+    private static List<Data> data = new ArrayList<>();
 
-    public Config() {super(Badge.getInstance(), "config.yml"); }
-    public static void reload() { config = new Config(); }
+    public Config() {
+        super(Badge.getInstance(), "config.yml");
+    }
+
+    public static void reload() {
+        config = new Config();
+    }
 
     @Override
     public void check() {
 
     }
 
-  /*  @Getter
-    public static int size = config.getInt("size");
+    public static int getSize() { return config.getInt("size"); }
 
-    @Getter
-    public static String chest = config.getString("chest");
+    public static String getChest() { return config.getString("chest"); }
 
-    @Getter
-    public static String guiname = config.getString("name");*/
+    public static String getGuiname() { return config.getString("name"); }
 
-  public static int getSize() { return config.getInt("size"); }
+    public static String getEquip() { return config.getString("equip"); }
 
-  public static String getChest() { return config.getString("chest"); }
+    public static String getKong() { return config.getString("kong"); }
 
-  public static String getGuiname() { return config.getString("name"); }
+    public static String getHelmet() { return config.getString("helmet"); }
 
-  public static String getEquip() { return config.getString("equip"); }
+    public static String getChestplate() { return config.getString("chestplate"); }
 
-  public static String getKong() { return config.getString("kong"); }
+    public static String getLeg() { return config.getString("leg"); }
 
-  public static String getHelmet() { return config.getString("helmet"); }
-
-  public static String getChestplate() { return config.getString("chestplate"); }
-
-  public static String getLeg() { return config.getString("leg"); }
-
-  public static String getBoot() { return config.getString("boot"); }
+    public static String getBoot() { return config.getString("boot"); }
 
 }

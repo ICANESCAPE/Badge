@@ -1,5 +1,6 @@
 package me.alchemy.badge.util;
 
+import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.sct.core.file.FileTool;
 
@@ -14,5 +15,5 @@ public class BasicUtil {
         return FileTool.getItem(item);
     }
 
-
+    public static String info(String msg) { return ChatColor.translateAlternateColorCodes('&', msg); }
 }

@@ -32,5 +32,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.13-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.18" level="project" />
     <orderEntry type="library" name="SCT_Core" level="project" />
+    <orderEntry type="library" name="LoreAttribute" level="project" />
   </component>
 </module>
