@@ -31,10 +31,7 @@ public class DamageListener implements Listener {
             double damage = e.getDamage();
 
             Attribute DamagerAttribute = AttributeApi.calculate(InvClose.getAttributeMap().get(damager.getName()));
-         //   Attribute PlayerAttribute = AttributeApi.getEntityEquipMentAttribute(entity);
-            //是否命中，没有命中就GG
-            //  e.setCancelled(MethodsUtil.isHit(DamagerAttribute));
-            //总伤害= 攻击*暴击-防御，真伤,秒杀另算
+
             damage += (double) DamagerAttribute.getDamage() * (1.0 + (double) DamagerAttribute.getCritical()/100.0);
 
             if(DamagerAttribute.getRealattack() >= 0 && e.getEntity() instanceof Player) {
@@ -50,6 +47,5 @@ public class DamageListener implements Listener {
             entity.setFireTicks(DamagerAttribute.getFire() * 20);
             e.setDamage(damage);
         }
-
     }
 }

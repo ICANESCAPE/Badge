@@ -28,7 +28,6 @@ public class GuiBuilder {
                     i == Integer.parseInt(Config.getEquip().split(",")[1]) ||
                     i == Integer.parseInt(Config.getEquip().split(",")[2]) ||
                     i == Integer.parseInt(Config.getEquip().split(",")[3])) {
-
             } else {
                 inventory.setItem(i, BasicUtil.toItem(Config.getKong()));
             }
@@ -54,7 +53,6 @@ public class GuiBuilder {
         } else {
             inventory.setItem(Integer.parseInt(Config.getEquip().split(",")[3]), air);
         }
-
         player.openInventory(inventory);
     }
 }
