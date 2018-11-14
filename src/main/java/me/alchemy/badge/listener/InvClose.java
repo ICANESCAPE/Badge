@@ -1,16 +1,18 @@
 package me.alchemy.badge.listener;
 
 import lombok.Getter;
+
 import me.alchemy.badge.file.Config;
 import me.alchemy.badge.util.BasicUtil;
 import me.alchemy.badge.util.DataUtil;
-import org.bukkit.Material;
+
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+
 import org.sct.fv.loreattribute.api.AttributeApi;
 import org.sct.fv.loreattribute.dto.Attribute;
 
@@ -47,6 +49,7 @@ public class InvClose implements Listener {
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(helmet));
             } else {
                 player.sendMessage(BasicUtil.info("&c这个物品不是头盔饰品，不作计算"));
+                DataUtil.setPlayerInfo(player.getName(), "helmet", null);
                 if(helmet != null) {
                     player.getInventory().addItem(new ItemStack[] { helmet } );
                 }
@@ -56,6 +59,7 @@ public class InvClose implements Listener {
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(chestplate));
             } else {
                 player.sendMessage(BasicUtil.info("&c这个物品不是胸甲饰品，不作计算"));
+                DataUtil.setPlayerInfo(player.getName(), "chestplate", null);
                 if(chestplate != null) {
                     player.getInventory().addItem(new ItemStack[] { chestplate } );
                 }
@@ -64,6 +68,7 @@ public class InvClose implements Listener {
                 DataUtil.setPlayerInfo(player.getName(), "leg", Config.getLeg());
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(legging));
             } else {
+                DataUtil.setPlayerInfo(player.getName(), "leg", null);
                 player.sendMessage(BasicUtil.info("&c这个物品不是护腿饰品或者为空，不作计算"));
                 if(legging != null) {
                     player.getInventory().addItem(new ItemStack[] { legging } );
@@ -74,8 +79,9 @@ public class InvClose implements Listener {
                 attribute = AttributeApi.calculate(attribute, AttributeApi.getAttributeFromItem(boots));
             } else {
                 player.sendMessage(BasicUtil.info("&c这个物品为空或者不是护腿饰品，不作计算"));
+                DataUtil.setPlayerInfo(player.getName(), "boot", null);
                 if(legging != null) {
-                    player.getInventory().addItem(new ItemStack[] { boots} );
+                    player.getInventory().addItem(new ItemStack[] { boots } );
                 }
             }
             attributeMap.put(player.getName(), attribute);

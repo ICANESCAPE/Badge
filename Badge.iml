@@ -33,5 +33,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.18" level="project" />
     <orderEntry type="library" name="SCT_Core" level="project" />
     <orderEntry type="library" name="LoreAttribute" level="project" />
+    <orderEntry type="library" name="SX-Attribute-2.0.2" level="project" />
   </component>
 </module>
